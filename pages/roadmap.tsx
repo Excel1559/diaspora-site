@@ -89,12 +89,8 @@ const sections = [
   },
   {
     icon: InstitutionIcon,
-    title: "Building the Pathways",
-    list: [
-      "Building Partnerships (in the 4 pillars)",
-      "Develop Event Schedule and Framework (Physical and Digital)",
-      "Develop Masterclasses",
-    ],
+    title: "Institutionalize the Revolution",
+    list: ["Buy land in Metaverse", "Launch the Diaspora Token"],
   },
 ]
 
