@@ -7,6 +7,7 @@ import { MintAncestorIcon } from "../components/Roadmap/MintAncestorIcon"
 import { StructureIcon } from "../components/Roadmap/StructureIcon"
 import { PathwaysIcon } from "../components/Roadmap/PathwaysIcon"
 import { InstitutionIcon } from "../components/Roadmap/InstitutionIcon"
+import { JourneyIcon } from "../components/Roadmap/JourneyIcon"
 import { HomeFooter } from "../components/Home/HomeFooter"
 
 const Roadmap = () => {
@@ -16,17 +17,16 @@ const Roadmap = () => {
 
       <div className="container mx-auto flex flex-col pb-60 lg:flex-row-reverse lg:align-top">
         <div className="left-0 flex w-full flex-row content-center items-center lg:fixed lg:w-1/2 lg:items-start">
-          <Image src={MaskImage} />
+          <Image alt="large tribal mask" src={MaskImage} />
         </div>
         <div className="mb-30 max-w-lg px-10">
           <div className="flex flex-col lg:mt-5">
             <p className="py-8 text-3xl font-bold tracking-wide text-white md:text-4xl lg:pt-24">{pageTitle}</p>
-            <p className="text-lg font-light text-white">{pageSubTitle}</p>
+            <p className="mb-32 text-lg font-light text-white">{pageSubTitle}</p>
           </div>
 
           {sections.map((item, index) => {
             const Icon = item.icon
-
             return (
               <div key={index} className="my-20">
                 <div className="mb-5 w-[200px]">
@@ -37,7 +37,7 @@ const Roadmap = () => {
                     <p className={"my-5 max-w-2xl text-3xl font-bold tracking-wide text-white"}>{item.title}</p>
 
                     <ul className="ml-5">
-                      {item.list.map((item) => {
+                      {item.list?.map((item) => {
                         return (
                           <li key={item} className={"mt-2 mr-2 w-full list-disc text-xl font-light text-white"}>
                             {item}
@@ -61,6 +61,10 @@ const Roadmap = () => {
 const sections = [
   {
     icon: CrowdFundingIcon,
+    title: "Launch Crowdfund",
+  },
+  {
+    icon: JourneyIcon,
     title: "The Journey",
     list: ["Define Mission/Vision", "Build Roadmap", "Build Whitepaper", "Brand Identity"],
   },
